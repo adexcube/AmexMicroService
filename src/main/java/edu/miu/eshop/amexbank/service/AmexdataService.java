@@ -12,4 +12,5 @@ public interface AmexdataService {
 	public void saveAmexdata(Amexdata data );
 	public List<Amexdata> getAmexdata();
 	public boolean confirmTransaction(Transaction transaction);
+	public double getBalanceOfAccount(String cardname);
 }

@@ -10,6 +10,7 @@ import edu.miu.eshop.amexbank.domain.Amexdata;
 
 @Repository
 public interface AmexdataRepository extends MongoRepository<Amexdata, BigInteger> {
-
+		public Amexdata findAmexdataBycardHolder(String cardname);
+		
 	
 }

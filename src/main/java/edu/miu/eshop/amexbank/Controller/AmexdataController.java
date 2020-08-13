@@ -48,4 +48,12 @@ public class AmexdataController {
 	}
 	
 	
+	@GetMapping("/getbalance")
+	public ResponseEntity<?> getBalance() {
+		double balance = service.getBalanceOfAccount("GROUP 3 ACCOUNT");
+		return new ResponseEntity<Double>(balance, HttpStatus.OK); 
+	}
+	
+	
+	
 }

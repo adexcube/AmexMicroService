@@ -59,10 +59,22 @@ public class AmexdataServiceImpl implements AmexdataService {
 	double amt = amexdata.getAmount();
 	amt -= amount;
 	amexdata.setAmount(amt);
+	Amexdata amex = repository.findAmexdataBycardHolder("GROUP 3 ACCOUNT");
+	double newamt = amex.getAmount();
+	newamt += amount;
+	amex.setAmount(newamt);
+	saveAmexdata(amex);
 	saveAmexdata(amexdata);
 	
 	return true;
 	
 }
+	
+
+	@Override
+	public double getBalanceOfAccount(String cardname) {
+		Amexdata amex = repository.findAmexdataBycardHolder(cardname);
+		return amex.getAmount();
+	}
 	
 }
